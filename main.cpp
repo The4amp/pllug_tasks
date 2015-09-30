@@ -1,9 +1,48 @@
-#include <QCoreApplication>
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
 
-int main(int argc, char *argv[])
+using namespace std;
+
+int main()
 {
-    QCoreApplication a(argc, argv);
+    int x;
+    string i;
+    bool y;
+    while (y==false)
+    {
+        cout << "input rock, scissors or  paper" << endl;
+        cin >> i;
 
-    return a.exec();
+        srand(time(0));
+        x = rand()%3+1;
+        if (x==1)
+        {
+            cout << "Computer choise rock" << endl;
+        }
+        if (x==2)
+        {
+            cout << "Computer choise scissors" << endl;
+        }
+        if (x==3)
+        {
+            cout << "Computer choise paper" << endl;
+        }
+        //====================================================
+        if (((i=="rock") && (x==1)) || ((i=="scissors") && (x==2)) ||((i=="paper") && (x==3)))
+        {
+            cout << "draw" << endl;
+        }
+        if (((i=="rock") && (x==2)) || ((i=="scissors") && (x==3)) || ((i=="paper") && (x==1)))
+        {
+            cout << "You win" << endl;
+        }
+        if (((i=="scissors") && (x==1)) || ((i=="paper") && (x==2)) || ((i=="rock") && (x==3)))
+        {
+            cout << "Looser" << endl;
+        }
+        cout << "==============================================" << endl;
+    }
+    return 0;
 }
 
