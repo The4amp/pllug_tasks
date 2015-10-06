@@ -11,27 +11,30 @@ int main()
     bool y;
     while (y==false)
     {
-        cout << "input rock, scissors or  paper" << endl;
-        cin >> i;
-
+        do
+        {
+            cout << "Input rock, scissors or  paper" << endl;
+            cin >> i;
+        } while ( (i!="rock") && (i!="scissors") && (i!="paper") );
         srand(time(0));
+        cout << "Your choise - " << i << endl;
         x = rand()%3+1;
         if (x==1)
         {
-            cout << "Computer choise rock" << endl;
+            cout << "Computer choise - rock" << endl;
         }
-        if (x==2)
+        else if (x==2)
         {
-            cout << "Computer choise scissors" << endl;
+            cout << "Computer choise - scissors" << endl;
         }
-        if (x==3)
+        else if (x==3)
         {
-            cout << "Computer choise paper" << endl;
+            cout << "Computer choise - paper" << endl;
         }
         //====================================================
         if (((i=="rock") && (x==1)) || ((i=="scissors") && (x==2)) ||((i=="paper") && (x==3)))
         {
-            cout << "draw" << endl;
+            cout << "Draw" << endl;
         }
         if (((i=="rock") && (x==2)) || ((i=="scissors") && (x==3)) || ((i=="paper") && (x==1)))
         {
@@ -39,8 +42,11 @@ int main()
         }
         if (((i=="scissors") && (x==1)) || ((i=="paper") && (x==2)) || ((i=="rock") && (x==3)))
         {
-            cout << "Looser" << endl;
+            cout << "Looser!!!" << endl;
         }
+        cout << "==============================================" << endl;
+        cout << "Input 0 for continue, input othet symbol for exit" << endl;
+        cin >> y;
         cout << "==============================================" << endl;
     }
     return 0;
